@@ -1,0 +1,72 @@
+.tab-content .container {
+    width: 85%;
+}
+
+ul.tabs {
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 130px;
+    margin-bottom: 80px;
+    width: 50%;
+}
+
+ul.tabs .indicator {
+    background-color: darkcyan;
+}
+
+ul.tabs li.tab a {
+    font-size: 130%;
+    color: black;
+}
+
+ul.tabs li.tab a:active,
+ul.tabs li.tab a:hover,
+ul.tabs li.tab a.active {
+    color: darkcyan;
+}
+
+img.circle.on, img.circle.off {
+    padding: 2px;
+    margin-left: 10px;
+}
+
+img.circle.on {
+    border: 3px solid forestgreen;
+}
+
+img.circle.off {
+    border: 3px solid crimson;
+}
+
+.names {
+    font-size: 120%;
+    font-weight: 700;
+}
+
+.online, .offline {
+    font-size: 80%;
+    float: right;
+    font-weight: 500;
+}
+
+.online {
+    color: forestgreen;
+}
+
+a.btn.pulse {
+    height: 10px;
+    width: 10px;
+}
+
+.offline {
+    color: crimson;
+}
+
+@media only screen and (max-width: 768px) {
+    ul.tabs {
+        width: 100%;
+    }
+    
+    ul.tabs li.tab a {
+        font-size: 80%;
+    }
+}
