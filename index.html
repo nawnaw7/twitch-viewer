@@ -26,17 +26,17 @@
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3"><a class="active" href="#test1">All</a></li>
-                    <li class="tab col s3"><a href="#test2">ONLINE</a></li>
-                    <li class="tab col s3"><a href="#test3">OFFLINE</a></li>
-                    <li class="tab col s3"><a href="#test4">FAVORITES</a></li>
+                    <li class="tab col s4"><a class="active" href="#all">All</a></li>
+                    <li class="tab col s4"><a href="#online">ONLINE</a></li>
+                    <li class="tab col s4"><a href="#offline">OFFLINE</a></li>
                 </ul>
             </div>
 
-            <div id="test1" class="col s12 tab-content">
-                <div class="container ">
-                    <div class="row">
+            <div id="all" class="col s12 tab-content">
+                <div class="container">
+                    <div class="row" id="all-tab">
 
+                        <!--
                         <div class="col s12 m6 l4">
                             <div class="card horizontal z-depth-1">
                                 <div class="row valign-wrapper">
@@ -162,14 +162,18 @@
                                 </div>
                             </div>
                         </div>
+                        -->
 
                     </div>
                 </div>
             </div>
-            <div id="test2" class="col s12 tab-content center-align">Test 2</div>
-            <div id="test3" class="col s12 tab-content center-align">Test 3</div>
-            <div id="test4" class="col s12 tab-content center-align">Test 4</div>
-
+            <div id="online" class="col s12 tab-content center-align">
+                <div class="container">
+                    <div class="row" id="online-tab">
+                    </div>
+                </div>
+            </div>
+            <div id="offline" class="col s12 tab-content center-align">Test 3</div>
 
         </div>
     </main>

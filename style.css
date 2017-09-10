@@ -11,17 +11,24 @@ ul.tabs {
 
 ul.tabs .indicator {
     background-color: darkcyan;
+    width: 20%;
+    margin: 0 auto;
 }
 
 ul.tabs li.tab a {
     font-size: 130%;
     color: black;
+    text-align: center;
 }
 
 ul.tabs li.tab a:active,
 ul.tabs li.tab a:hover,
 ul.tabs li.tab a.active {
     color: darkcyan;
+}
+
+.card.horizontal {
+    height: 250px;
 }
 
 img.circle.on, img.circle.off {
