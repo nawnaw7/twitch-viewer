@@ -7,6 +7,7 @@
     <title>FCC Twitch Viewer</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -17,7 +18,7 @@
     <header>
         <nav class="deep-purple lighten-2">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">TWITCH.tv</a>
+                <a href="https://www.twitch.tv/" class="brand-logo center" target="_blank">TWITCH.<span class="pink-text text-lighten-3">tv</span></a>
             </div>
         </nav>
     </header>
@@ -34,7 +35,7 @@
 
             <div id="all" class="col s12 tab-content">
                 <div class="container">
-                    <div class="row" id="all-tab">
+                    <div class="row all-cards" id="all-tab">
 
                         <!--
                         <div class="col s12 m6 l4">
@@ -57,128 +58,51 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col s12 m6 l4">
-                            <div class="card horizontal z-depth-1">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img class="circle responsive-img off" src="images/sherry-zhu-263445.jpg">
-                                    </div>
-                                    <div class="col s9">
-                                        <div class="card-stacked">
-                                            <div class="card-content">
-                                                <p class="names">Whatever Name <span class="offline">Offline</span></p><br>
-                                                <p class="stream">I am not streaming....</p>
-                                            </div>
-                                            <div class="card-action links">
-                                                <a href="#">Go to my channel</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m6 l4">
-                            <div class="card horizontal z-depth-1">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img class="circle responsive-img on" src="images/sherry-zhu-263445.jpg">
-                                    </div>
-                                    <div class="col s9">
-                                        <div class="card-stacked">
-                                            <div class="card-content">
-                                                <p class="names">Whatever Name <span class="online">Online <a href="#" class="btn btn-floating pulse"></a></span></p><br>
-                                                <p class="stream">I am currently streaming....</p>
-                                            </div>
-                                            <div class="card-action links">
-                                                <a href="#">Go to my channel</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m6 l4">
-                            <div class="card horizontal z-depth-1">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img class="circle responsive-img on" src="images/sherry-zhu-263445.jpg">
-                                    </div>
-                                    <div class="col s9">
-                                        <div class="card-stacked">
-                                            <div class="card-content">
-                                                <p class="names">Whatever Name <span class="online">Online <a href="#" class="btn btn-floating pulse"></a></span></p><br>
-                                                <p class="stream">I am currently streaming....</p>
-                                            </div>
-                                            <div class="card-action links">
-                                                <a href="#">Go to my channel</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m6 l4">
-                            <div class="card horizontal z-depth-1">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img class="circle responsive-img on" src="images/sherry-zhu-263445.jpg">
-                                    </div>
-                                    <div class="col s9">
-                                        <div class="card-stacked">
-                                            <div class="card-content">
-                                                <p class="names">Whatever Name <span class="online">Online <a href="#" class="btn btn-floating pulse"></a></span></p><br>
-                                                <p class="stream">I am currently streaming....</p>
-                                            </div>
-                                            <div class="card-action links">
-                                                <a href="#">Go to my channel</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m6 l4">
-                            <div class="card horizontal z-depth-1">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img class="circle responsive-img off" src="images/sherry-zhu-263445.jpg">
-                                    </div>
-                                    <div class="col s9">
-                                        <div class="card-stacked">
-                                            <div class="card-content">
-                                                <p class="names">Whatever Name <span class="offline">Offline</span></p><br>
-                                                <p class="stream">I am not streaming....</p>
-                                            </div>
-                                            <div class="card-action links">
-                                                <a href="#">Go to my channel</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         -->
 
                     </div>
                 </div>
             </div>
-            <div id="online" class="col s12 tab-content center-align">
+            <div id="online" class="col s12 tab-content">
                 <div class="container">
                     <div class="row" id="online-tab">
                     </div>
                 </div>
             </div>
-            <div id="offline" class="col s12 tab-content center-align">Test 3</div>
+            <div id="offline" class="col s12 tab-content">
+                <div class="container">
+                    <div class="row" id="offline-tab">
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main>
 
-    <footer>
+    <footer class="page-footer deep-purple lighten-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text"><i class="ion-social-octocat"></i><span class="pink-text text-lighten-3"> N</span>aw<span class="pink-text text-lighten-3">n</span>aw</h5>
+                    <p class="grey-text text-lighten-3">FreeCodeCamp 4th Intermediate <span class="pink-text text-lighten-3">J</span>ava<span class="pink-text text-lighten-3">S</span>cript Project</p>
+                    <p class="grey-text text-lighten-3">Made with <span class="pink-text text-lighten-3"><i class="ion-coffee"></i></span> and <span class="pink-text text-lighten-3"><i class="ion-ios-heart"></i></span>, and <a class="white-text" href="http://materializecss.com/getting-started.html" target="_blank">Materialize <span class="pink-text text-lighten-3">CSS</span></a></p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Find me</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://twitter.com/sirbu_ioana" target="_blank"><span class="pink-text text-lighten-3"><i class="ion-social-twitter-outline"></i></span> Twitter</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/nawnaw7" target="_blank"><span class="pink-text text-lighten-3"><i class="ion-social-github-outline"></i></span> Github</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/ioana-sirbu-b74235132/" target="_blank"><span class="pink-text text-lighten-3"><i class="ion-social-linkedin-outline"></i></span> LinkedIn</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/nana.japaniac" target="_blank"><span class="pink-text text-lighten-3"><i class="ion-social-facebook-outline"></i></span> Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Coded by Nawnaw
+            </div>
+        </div>
     </footer>
 
     <!--Import jQuery before materialize.js-->

@@ -4,12 +4,12 @@ $(document).ready(function () {
 
 
 var usernames = ["ESL_SC2", "OgamingSC2", "riotgames", "freecodecamp", "syndicate", "habathcx", "Warcraft", "KingGothalion", "nightblue3"];
-var URL_streams = 'https://wind-bow.gomix.me/twitch-api/';
-var callbackFunc_1 = '?callback=jsonData_1';
-var callbackFunc_2 = '?callback=jsonData_2';
+var URL_streams = 'https://wind-bow.gomix.me/twitch-api/streams/';
+var callback = '?callback=jsonData';
 var URL;
 
-function getJSONP_1() {
+//VanillaJS JSONP call
+function getJSONP() {
     var script = document.createElement('script');
 
     script.type = 'text/javascript';
@@ -19,67 +19,49 @@ function getJSONP_1() {
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
-function getJSONP_2() {
-    var script = document.createElement('script');
-
-    script.type = 'text/javascript';
-
-    script.src = URL;
-
-    document.getElementsByTagName('head')[0].appendChild(script);
-}
 
 //Get the currently streaming channels
 usernames.forEach(function (user) {
-    URL = URL_streams + 'streams/' + user + callbackFunc_1;
+    URL = URL_streams + user + callback;
 
-    getJSONP_1();
+    getJSONP();
 });
 
-//Get channel extended information
-usernames.forEach(function (user) {
-    URL = URL_streams + 'channels/' + user + callbackFunc_2;
+//Callback function for the API call
+function jsonData(data) {
+    console.log(data);
 
-    getJSONP_2();
-});
+    var userName = data._links.self.substring(37);
+    var offLink = 'https://www.twitch.tv/' + userName; 
+    var streamStatus = data.stream;
+    var cardOn, cardOff;
+    
+    
+    if (streamStatus === null) {
 
+        cardOff = '<div class="col s12 m6 l4"><div class="card horizontal z-depth-1 fadeIn"><div class="row valign-wrapper"><div class="col s3"><img class="circle responsive-img off" src="images/twitch-icon.png"></div><div class="col s9"><div class="card-stacked"><div class="card-content"><p class="names">' + userName + '<span class="stat offline">Offline </span></p><br><p class="stream">Currently not streaming...</p></div><div class="card-action links"><a href="' + offLink + '" target="_blank">Go to my channel</a></div></div></div></div></div></div>';
+        
+        document.getElementById('all-tab').innerHTML += cardOff;
+        document.getElementById('offline-tab').innerHTML += cardOff;
 
-
-function jsonData_1(data2) {
-    console.log(data2);
-
-    var statusArr = [];
-    var online = false;
-    var userName = data2._links.self.substring(37);
-
-    if (data2.stream != null) {
-        online = true;
-        console.log('Channel: ' + userName + ' is online.');
-
-    } else {
-        online = false;
-        console.log('Channel: ' + userName + ' is offline.');
-    }
-
-
+    } else if (streamStatus !== null) {
+        
+        var status = data.stream.channel.status;
+        
+        if (status.length > 20) {
+            status = data.stream.channel.status.substring(0, 30) + '...';
+        } else {
+            status = data.stream.channel.status;
+        }
+        
+        cardOn = '<div class="col s12 m6 l4"><div class="card horizontal z-depth-1 fadeIn"><div class="row valign-wrapper"><div class="col s3"><img class="circle responsive-img on" src="' + data.stream.channel.logo + '"></div><div class="col s9"><div class="card-stacked"><div class="card-content"><p class="names">' + data.stream.channel.display_name + '<span class="stat online">Online <a href="#" class="btn btn-floating pulse"></a></span></p><br><p class="stream">' + status + '</p><p class="game">Playing: ' + data.stream.channel.game + '</p></div><div class="card-action links"><a href="' + data.stream.channel.url + '" target="_blank">Go to my channel</a></div></div></div></div></div></div>';
+        
+        document.getElementById('all-tab').innerHTML += cardOn;
+        document.getElementById('online-tab').innerHTML += cardOn;
+    
+    }  
+    
 }
 
 
 
-function jsonData_2(data) {
-
-    //console.log(data);
-
-    var logo = data.logo;
-    var channel = data.display_name;
-    var status = data.status;
-    var links = data.url;
-
-    var cardOn = '<div class="col s12 m6 l4"><div class="card horizontal z-depth-1"><div class="row valign-wrapper"><div class="col s3"><img class="circle responsive-img on" src="' + logo + '"></div><div class="col s9"><div class="card-stacked"><div class="card-content"><p class="names">' + channel + '<span class="stat online">Online <a href="#" class="btn btn-floating pulse"></a></span></p><br><p class="stream">' + status + '</p></div><div class="card-action links"><a href="' + links + '" target="_blank">Go to my channel</a></div></div></div></div></div></div>';
-
-    var cardOff = '<div class="col s12 m6 l4"><div class="card horizontal z-depth-1"><div class="row valign-wrapper"><div class="col s3"><img class="circle responsive-img off" src="' + logo + '"></div><div class="col s9"><div class="card-stacked"><div class="card-content"><p class="names">' + channel + '<span class="stat offline">Offline </span></p><br><p class="stream">' + status + '</p></div><div class="card-action links"><a href="' + links + '" target="_blank">Go to my channel</a></div></div></div></div></div></div>';
-
-    document.getElementById('all-tab').innerHTML += cardOn;
-
-
-}

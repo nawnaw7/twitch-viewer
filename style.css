@@ -10,26 +10,51 @@ ul.tabs {
 }
 
 ul.tabs .indicator {
-    background-color: darkcyan;
+    background-color: #9575CD;
     width: 20%;
     margin: 0 auto;
 }
 
 ul.tabs li.tab a {
     font-size: 130%;
-    color: black;
+    color: #5C5757;
     text-align: center;
 }
 
 ul.tabs li.tab a:active,
-ul.tabs li.tab a:hover,
 ul.tabs li.tab a.active {
-    color: darkcyan;
+    color: #9575CD;
+}
+
+ul.tabs li.tab a:hover {
+    color: #F48FB1;
+}
+
+.tab-content {
+    margin-bottom: 70px;
 }
 
 .card.horizontal {
     height: 250px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
 }
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
 
 img.circle.on, img.circle.off {
     padding: 2px;
@@ -68,12 +93,21 @@ a.btn.pulse {
     color: crimson;
 }
 
+.stream {
+    font-style: italic;
+}
+
+.game {
+    font-weight: 500;
+    padding-top: 10px;
+}
+
 @media only screen and (max-width: 768px) {
     ul.tabs {
         width: 100%;
     }
     
     ul.tabs li.tab a {
-        font-size: 80%;
+        font-size: 110%;
     }
 }
