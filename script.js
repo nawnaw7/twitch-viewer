@@ -3,7 +3,7 @@ $(document).ready(function () {
 });
 
 
-var usernames = ["ESL_SC2", "OgamingSC2", "riotgames", "freecodecamp", "syndicate", "habathcx", "Warcraft", "KingGothalion", "nightblue3"];
+var usernames = ["ESL_SC2", "OgamingSC2", "riotgames", "freecodecamp", "syndicate", "Datto", "Warcraft", "Sing_sing", "Zizaran"];
 var URL_streams = 'https://wind-bow.gomix.me/twitch-api/streams/';
 var callback = '?callback=jsonData';
 var URL;
